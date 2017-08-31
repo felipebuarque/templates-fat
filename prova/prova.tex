@@ -1,0 +1,164 @@
+\documentclass[addpoints, a4paper]{exam}
+% --- este trecho impede um conflito de nomes entre a classe exam e o pacote minted
+\newcommand*{\renameenviron}[1]{%
+	\expandafter\let\csname exam-#1\expandafter\endcsname
+	\csname #1\endcsname
+	\expandafter\let\csname endexam-#1\expandafter\endcsname
+	\csname end#1\endcsname
+	\expandafter\let\csname #1\endcsname\relax
+	\expandafter\let\csname end#1\endcsname\relax
+}
+\renameenviron{framed}
+\renameenviron{shaded}
+\renameenviron{leftbar}
+% ---
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{../img/}}
+\usepackage[fleqn]{mathtools}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{minted}
+\usepackage{lastpage}
+
+\setlength\headheight{2cm} %% just to make warning go away. Adjust the value after looking into the warning.
+\setlength\footskip{-2cm}
+
+% These commands set up the running header on the top of the exam pages
+%\pagestyle{head}
+\firstpageheader{\includegraphics[width=1.5cm]{fapec}}{\textsc{Fundação Alagoana de Pesquisa, Educação e Cultura}\\\textsc{Faculdade de Tecnologia de Alagoas}\\}{\includegraphics[width=2cm]{fat}}
+
+%\runningheader{\small Introdução à Programação}{\small Final}{\small Página \thepage \hspace{1pt} de \pageref{LastPage}}
+%\runningheadrule
+%\runningfooter{}{}{}
+
+%Ajusta as palavras usadas na tabela de pontuação e questões
+\vqword{Questão}
+\vpword{Máximo}
+\vsword{Pontuação}
+\pointpoints{ponto}{pontos}
+
+%-------------------------------------------------------------
+
+\begin{document}
+
+{\small
+	\makebox[0.10\textwidth][l]{Curso:}
+	\makebox[0.40\textwidth][l]{Análise e Desenvolvimento de Sistemas}
+	\makebox[0.10\textwidth][l]{Disciplina:\enspace}
+	\makebox[0.40\textwidth][l]{Introdução à Programação}
+	
+	\vspace{5mm}
+	\makebox[0.10\textwidth][l]{Professor:}
+	\makebox[0.40\textwidth][l]{Társis Wanderley Toledo}
+	\makebox[0.10\textwidth][l]{Turma:}
+	\makebox[0.40\textwidth][l]{AS001A}
+	
+	\vspace{5mm}
+	\makebox[0.10\textwidth][l]{Aluno:}
+	\makebox[0.60\textwidth][l]{\enspace\hrulefill}
+	\makebox[0.06\textwidth][r]{Data:}
+	\makebox[0.24\textwidth][l]{\enspace\hrulefill}
+	
+	\vspace{5mm}
+	
+	\makebox[0.70\textwidth]{
+		{\large $\square$} VA1 \quad 
+		{\large $\square$} VA2 \quad 
+		{\large $\square$} Reavaliação VA1 \quad
+		{\large $\square$} Reavaliação VA2 \quad 
+		{\large $\text{\rlap{$\checkmark$}}\square$} Final}
+	\makebox[0.06\textwidth][r]{Nota:}
+	\makebox[0.24\textwidth][l]{\enspace\hrulefill}
+	
+	%-------------------------------------------------------------------
+	
+	\vspace{5mm}
+	
+	\fbox{\parbox{\textwidth}{\small
+		Instruções:
+		\begin{itemize}
+			\item Celulares devem permanecer desligados durante todo o tempo da prova;
+			      
+			\item O uso de qualquer equipamento ou material de consulta só será permitido mediante autorização do professor;
+			      
+			\item Antes de responder, leia todas as questões e verifique se a prova está completa;
+			      
+			\item Não se comunique com os demais estudantes nem troque material com eles; 
+			      
+			\item Use caneta esferográfica, tanto para marcar as respostas das questões de múltipla escolha quanto para escrever as respostas das questões discursivas. Respostas escritas com lápis grafite não são passivas de recurso da nota atribuída à questão;
+			      
+			\item Você terá as horas correspondentes às aulas da disciplina para responder às questões;
+			      
+			\item Após a saída do primeiro aluno da sala de aula, não será permitida a entrada de nenhum aluno para a realização da prova;
+			      
+			\item Quando terminar, entregue a prova e assine a lista de frequência com caneta esferográfica.
+		\end{itemize}
+	}}
+	
+	\vspace{5mm}
+	%-------------------------------------------------------------------
+	
+	\begin{questions}
+		
+		\setlength{\columnsep}{30pt}
+		\begin{multicols}{2}
+			\question[2] O somatório $0 + 1 + \textellipsis + n$ pode ser calculado utilizando a fórmula
+			\begin{equation*} \label{sum}
+				0 + 1 + \textellipsis + n = \frac{n \cdot (n + 1)}{2}
+			\end{equation*}
+			
+			para $n > 0$. Escreva um programa que lê um número inteiro \texttt{n} e depois imprime o seu somatório utilizando a fórmula acima.
+			
+			\question[2] Descreva com precisão o que o pedaço de programa abaixo calcula e imprime.
+			
+			\begin{minted}{java}
+Scanner sc = new Scanner(System.in);
+int x = sc.nextInt();
+int y = sc.nextInt();
+int z = sc.nextInt();
+int w = (x + y + z) / 3;
+
+if (w > z) { System.out.print(3); }
+if (w > x) { System.out.print(1); }
+if (w > y) { System.out.print(2); }
+			\end{minted}
+			
+			\question[2] Escreva um programa que lê um número inteiro \texttt{n}, calcula e imprime o fatorial deste número. Considere que o número lido será sempre maior ou igual a zero. O fatorial de um número $n$, escrito $n!$, é:
+			\[
+				n! = 
+				\begin{cases}
+					n \cdot (n - 1) \cdot~\textellipsis~\cdot 2 \cdot 1, & \text{se } n > 1 \\
+					1,                                                                 & \text{se } n = 0 
+				\end{cases}
+			\]
+			
+			Exemplos:
+			\begin{align*}
+				5! & = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120 \\
+				4! & = 4 \cdot 3 \cdot 2 \cdot 1 = 24          \\
+				2! & = 2 \cdot 1 = 2                           \\
+				0! & = 0                                       
+			\end{align*}
+			
+			\question[2] Escreva um programa que, utilizando estruturas de repetição, preenche um array de capacidade 5 com números inteiros fornecidos pelo usuário. Em seguida o programa deve imprimir os números do array conforme o formato a seguir, também fazendo uso de estruturas de repetição. Por exemplo, se os números fornecidos forem \texttt{0}, \texttt{7}, \texttt{3}, \texttt{4} e \texttt{9}, então o programa deve imprimir:
+			
+			\begin{verbatim}
+0
+ 7
+  3
+   4
+    9
+			\end{verbatim}
+			Não há nenhum espaço em branco antes do número \texttt{0}, há um espaço em branco antes do número \texttt{7}, há dois antes do \texttt{3}, três antes do \texttt{4} e quatro antes do \texttt{9}. De uma forma geral, o número na posição \texttt{k} é precedido de \texttt{k} espaços. Considere que todos os números lidos estão entre 0 e 9.
+			
+			\question[2] Escreva uma função que recebe como argumentos um array de \texttt{double}s \texttt{a} e um outro \texttt{double} \texttt{b} e que não possui retorno. A função deve imprimir uma linha contendo quantos números de \texttt{a} são menores que \texttt{b} e outra linha com quantos números de \texttt{a} são maiores ou iguais que \texttt{b}. Por exemplo, se a função for chamada, passando um array com os números \texttt{1.88}, \texttt{1.75}, \texttt{1.65}, \texttt{2.1} e \texttt{1.51}, e o número \texttt{1.80}, então a função deve imprimir:
+			
+			\texttt{3}\\
+			\texttt{2}
+			
+		\end{multicols}
+	
+	\end{questions}
+	
+\end{document}

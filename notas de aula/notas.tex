@@ -1,0 +1,160 @@
+% !TeX spellcheck = pt_BR
+\documentclass[justified]{tufte-handout}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{mdframed}
+\mdfdefinestyle{exercise}{
+	skipabove=0pt,
+	skipbelow=0pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	innerleftmargin=5pt,
+	innerrightmargin=5pt,
+	innertopmargin=5pt,
+	innerbottommargin=5pt
+}
+
+% Ambiente para exercícios
+\newcounter{exercise}
+\newenvironment{exercise}[1]{
+	\refstepcounter{exercise}%
+	\label{#1}
+	\begin{mdframed}[style=exercise]\textsc{Exercício \theexercise}.}%
+	{\end{mdframed}}%
+
+\usepackage{color}              % Cores pare syntax highlighting
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.3,0.3,0.3}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{myblue} {rgb}{0.0,  0.4, 0.6}
+
+\usepackage{pxfonts}            % Permite bold e italics na fonte computer modern
+
+\usepackage{listings}
+
+\lstset{
+	xleftmargin=0cm,
+	xrightmargin=0.5cm,
+	%linewidth=0.93\linewidth,
+	breaklines=true,
+	escapeinside={(@}{@)},
+	language=Java,
+	%texcl=true,
+	showstringspaces=false,
+	extendedchars=false,
+	tabsize=2,
+	numbers=right,
+	numberstyle=\tiny,
+	commentstyle=\color{mygreen},
+	keywordstyle=\color{myblue}\bfseries,
+	stringstyle=\color{mygray}\textit,
+	basicstyle=\ttfamily\small,
+	columns=fixed,
+	emph={printf, scanf},
+	emphstyle={\bfseries\textit}%
+}
+
+\lstMakeShortInline[
+xleftmargin=0cm,
+xrightmargin=0.5cm,
+%linewidth=0.93\linewidth,
+breaklines=true,
+escapeinside={(@}{@)},
+language=Java,
+%texcl=true,
+showstringspaces=false,
+extendedchars=false,
+tabsize=2,
+numbers=right,
+numberstyle=\tiny,
+commentstyle=\color{mygreen},
+keywordstyle=\color{myblue}\bfseries,
+stringstyle=\color{mygray}\textit,
+basicstyle=\ttfamily\small,
+columns=fixed,
+emph={printf, scanf},
+emphstyle={\bfseries\textit}%
+]@
+
+\lstdefinestyle{boxed}{
+	frame=tb,
+	%	multicols=2
+}
+
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks = true,
+	%	linkbordercolor = {white},
+	linkcolor = red
+}
+
+\usepackage{booktabs} % for tables
+
+\title{Introdução à Programação}
+\author{Társis Toledo}
+\date{10 de agosto de 2016 -- Semana 1}
+
+\begin{document}
+\maketitle
+
+\section{Agenda}
+
+\section{Propósito do curso}
+
+Programação é a arte de construir programas que solucionam problemas de forma \emph{eficiente} e \emph{eficaz}. Neste curso serão abordados temas teóricos e práticos de forma conjugada sobre os fundamentos da programação e suas aplicações.
+
+Há muito mais no mundo da programação do que aquilo que pode ser abordado em um curso introdutório como esse. Por este motivo é a obrigação de cada um dos participantes \emph{ir sempre além} daquilo que é abordado em sala, nos materiais didáticos e na bibliografia disponível na instituição.
+
+Além disso muitas outras disciplinas exigirão o conhecimento e habilidades a serem desenvolvidas nesta disciplina.
+
+Para alguns este pode ser o primeiro contato com programação, o que pode imprimir uma certa dificuldade natural, como é comum em tantos outros contextos. Nestes casos recomenda-se atenção especial e esforços mais veementes nos estudos. Conte sempre com o professor e monitor para esclarecer dúvidas o mais cedo possível.
+
+
+\section{Introdução}
+
+%\newthought{Computadores executam programas}; esta é sua principal função. Mas o que realmente são programas? Como eles são criados, e por quem? Programação é uma atividade primordialmente humana e exige doses de criatividade, formalismos e atenção que pode chegar a beira da neurose. Frequentemente faz-se necessário ter uma grande quantidade de informações à respeito do funcionamento de certas partes de um programa que por sua vez interage com outras partes do mesmo programa que interage com \emph{um outro programa que nem mesmo sabe-se muito bem como funciona}. Por exemplo, a suite de programas LibreOffice (editor de texto, planilhas, apresentações\textellipsis) contém mais de 7.500.000\footnote{\url{https://www.openhub.net/p/libreoffice}} linhas código. Você conseguiria manter todas essas linhas na sua cabeça de uma só vez?  Difilcilmente pois um projeto de tal tamanho requer o trabalho de mais de 1500 pessoas para se manter competitivo. Esta "complicação"~tem um nome: \emph{complexidade}. Criar programas que são eficientes, eficazes e ainda mantêm-se livre de complexidade é...
+
+\newthought{Computadores executam programas}; esta é sua principal função. Mas o que realmente são programas? Como eles são criados, e por quem? Programação é uma atividade primordialmente humana e exige doses de criatividade, formalismos e atenção. Por isso os assuntos serão abordados paulatinamente.
+
+\newthought{Um programa é uma sequência de instruções} que quando executadas (geralmente) realizam alguma tarefa útil. Diferentemente do \emph{uso de um programa}, onde é possível, através da interface gráfica, realizar alguma tarefa como um cálculo na calculadora, na \emph{criação/escrita de um programa}, foco é dar instruções ao \emph{processador}, e não a um programa. A maneira com que essas instruções são passadas para o processador é (geralmente) começa com uma \emph{linguagem de programação}.
+
+Existem muitas linguagens de programação que fazem uso de ideias diferentes e que são utilizados com propósitos diferentes. O \emph{Tiobe Index}\footnote{\url{http://www.tiobe.com/tiobe-index/}} é um dos muitos sites que tentam calcular um índice de popularidade das linguagens de programação. Existem centenas delas, mas Java é uma das mais populares hoje há muito tempo. Além da popularidade, Java também é conhecida por
+\begin{itemize}
+	\item ser relativamente simples;
+	\item está em constante evolução;
+	\item pode ser utilizada para criar aplicações web;
+	\item faz parte do núcleo da plataforma Android\footnote{\url{https://www.android.com/}};
+	\item pode ser utilizado para criar jogos\footnote{\url{https://libgdx.badlogicgames.com/}}
+\end{itemize}
+e muitas outras coisas.
+
+Pelos motivos citados acima, a principal linguagem utilizada neste curso será Java mas o debate de qual linguagem é "uma boa linguagem para se começar a programar" está longe de terminado\footnote{\url{http://stackoverflow.hewgill.com/questions/644/099.html}}\footnote{\url{http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext}}.
+
+É virtualmente impossível aprender com riqueza de detalhes o funcionamento de todas as linguagens de programação mas a boa notícia é que a segunda linguagem é (quase) sempre mais fácil do que a primeira.
+
+\newthought{Talvez quase tão importante} quanto desenvolver habilidades em programação é aprender a língua inglesa. A maior parte dos melhores, mais completos e didáticos materiais está em inglês. As discussões mais importantes acontecem em inglês. As palestras dados pelos profissionais, os artigos científicos mais relevantes são publicados em inglês. É de extrema importância aprender inglês.
+
+\section{Uma visão geral sobre programação}
+
+\newthought{Computadores não "falam"~a nossa língua}; apenas sabem realizar instruções incrivelmente simples com \emph{bits} (zeros e uns). Isso não quer dizer que programadores hoje em dia (necessariamente) programem utilizando zeros e uns, mas seus antecessores já passaram por esta tortura. Mas se os computadores só "falam"~zeros e uns, como é que uma sequência de instruções (programa) é passada para que um computador a realize?
+
+Os programas escritos em uma linguagem de programação precisam ser traduzidos para que o computador e seus componentes "entendam". Um tipo de tradutor é conhecido como \emph{compilador} e ele é responsável por transformar o código de uma determinada linguagem em um código que o computador consiga entender e executar. A maioria dos arquivos executáveis (arquivos com extensão .exe no Windows, por exemplo) foi produzida desta forma. Uma outro tipo é o \emph{interpretador} e, diferentemente do compilador, seu propósito principal não é gerar um arquivo que pode ser executado em outro momento mas sim de ler as instruções que estão em escritas em uma linguagem e interpretá-las imediatamente. Apesar da distinção, é comum que uma linguagem de programação tenha um compilador e um interpretador, ou algo intermediário.
+
+\newthought{Assim como a maioria das línguas faladas}, as linguagens de programação podem ser divididas em (pelo menos) dois aspectos: \emph{sintaxe} e \emph{semântica}. A sintaxe é composta de um vocabulário que é o conjunto de palavras válidas; e também de uma gramática que é o conjunto de regras que determina como as palavras válidas devem ser utilizadas para formar frases\sidenote{"Os mano tão tudo bomba; e as mina bumbum granada" são frases que contém erros de sintaxe}. A semântica, por outro lado, é a interpretação dos dos significados das frases que podem ser construídas respeitando-se a gramática\sidenote{A frase "A porta está no meu lado esquerdo" dá entendimento de que o autor da possui uma porta no seu lado esquerdo. Se a porta não estiver realmente no seu lado esquerdo, dizemos que trata-se de um erro semântico.}. Na língua portuguesa, por exemplo, um pequeno erro de sintaxe pode passar desapercebido e não prejudicar a sua interpretação. Este parágrafo contém (pelo menos) um erro de sintaxe e talvez o leitor nem tenha percebido\sidenote{Você consegue encontrá-lo?}. Já os compiladores se negam a traduzir qualquer programa se ele contiver um erro de sintaxe, por mais pequeno ou irrelevante que pareça. Esta rigidez é necessária para garantir que não haja ambiguidades no funcionamento de nenhum programa.
+
+Durante este curso, trabalharemos a sintaxe e semântica da linguagem de programação Java mas antes vamos conhecer outros conceitos mais importantes através da iniciativa \url{Code.org} onde serão trabalhados os seguintes conceitos:
+
+\begin{itemize}
+	\item pensamento computacional;
+	\item (de)composição;
+	\item estruturas de repetição;
+	\item execução condicional;
+	\item variáveis;
+	\item funções.
+\end{itemize}
+
+\end{document}

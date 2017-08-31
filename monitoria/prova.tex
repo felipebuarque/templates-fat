@@ -1,0 +1,131 @@
+\documentclass[addpoints, a4paper, 11pt]{exam}
+\usepackage[left=3cm,bottom=2cm,top=3cm, right=2cm, headheight=2cm]{geometry}
+% --- este trecho impede um conflito de nomes entre a classe exam e o pacote minted
+\newcommand*{\renameenviron}[1]{%
+	\expandafter\let\csname exam-#1\expandafter\endcsname
+	\csname #1\endcsname
+	\expandafter\let\csname endexam-#1\expandafter\endcsname
+	\csname end#1\endcsname
+	\expandafter\let\csname #1\endcsname\relax
+	\expandafter\let\csname end#1\endcsname\relax
+}
+\renameenviron{framed}
+\renameenviron{shaded}
+\renameenviron{leftbar}
+% ---
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{../img/}}
+% para posicionar equações à esquerda
+\usepackage[fleqn]{mathtools} 
+% syntax highlighting e formatação de código. impõe limitações no build deste documento. para mais detalhes veja a documentação do pacote.
+\usepackage{minted}
+% contador utilizado no cabeçalho "Página X de Y"
+\usepackage{lastpage}
+%\usepackage{showframe}
+\usepackage{fancyvrb}
+
+\firstpageheader{\includegraphics[height=1.7cm]{fapec}}{\textsc{Fundação Alagoana de Pesquisa, Educação e Cultura}\\\textsc{Faculdade de Tecnologia de Alagoas}\\}{\includegraphics[height=1.7cm]{fat}}
+
+\firstpagefootrule
+\firstpagefooter{}{}{\small Página \thepage \hspace{1pt} de \pageref{LastPage}}
+
+\runningheader{\small Seleção para Monitoria em Programação}{}{}
+\runningheadrule
+\runningfooter{}{}{\small Página \thepage \hspace{1pt} de \pageref{LastPage}}
+\runningfootrule
+
+%Ajusta as palavras usadas na tabela de pontuação e questões
+\vqword{Questão}
+\vpword{Máximo}
+\vsword{Pontuação}
+\pointpoints{ponto}{pontos}
+
+%-------------------------------------------------------------
+
+\begin{document}
+% -- cabeçalho
+{
+	\makebox[0.10\textwidth][l]{Curso:}
+	\makebox[0.60\textwidth][l]{Análise e Desenvolvimento de Sistemas}
+	\makebox[0.10\textwidth][l]{\enspace~Data:}
+	\makebox[0.20\textwidth][l]{25/08/2017}
+			
+	\makebox[0.10\textwidth][l]{Prova:}
+	\makebox[0.90\textwidth][l]{Monitoria em Introdução à Programação e Laboratório de Programação}
+			
+	\vspace{5mm}
+	\makebox[0.10\textwidth][l]{Aluno:}
+	\makebox[0.60\textwidth][l]{\hrulefill}
+	\makebox[0.10\textwidth][l]{\enspace~Nota:}
+	\makebox[0.15\textwidth][l]{\enspace\hrulefill}
+			
+	\vspace{5mm}
+			
+	% ---
+			
+	\textsc{Atenção candidato:} Todas as soluções devem ser escritas: (i) por \emph{completo}, isto é, nenhum trecho de código deve ser omitido ou abreviado, (ii) de forma legível e \emph{indentadas corretamente} e (iii) conter programas \emph{sintaticamente corretos}. A não observância destes critérios resultarão na redução da pontuação concedida.
+			
+	\begin{questions}
+						
+		\question[2\half] O somatório $0 + 1 + \ldots + n$ pode ser calculado utilizando a fórmula
+		\begin{equation*} \label{sum}
+			0 + 1 + \ldots + n = \frac{n \cdot (n + 1)}{2}
+		\end{equation*}
+						
+		para $n > 0$. Escreva um programa que lê um número inteiro \texttt{n} e depois imprime o seu somatório utilizando a fórmula acima. Se o número lido for um valor menor que zero o programa não deve imprimir nada.
+						
+		\question[2\half] Escreva um programa que lê um número inteiro \texttt{n}, calcula e imprime seu fatorial. Considere que o número lido será sempre maior ou igual a zero. O fatorial de um número $n$ ($n > 0$), escrito $n!$, é:
+		\[
+			n! = 
+			\begin{cases}
+				n \cdot (n - 1) \cdot (n - 2) \cdot~\ldots~\cdot 2 \cdot 1, & \text{se } n > 1 \\
+				1,                                                          & \text{se } n = 0 
+			\end{cases}
+		\]
+						
+		Exemplos:
+		\begin{align*}
+			5! & = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120 \\
+			4! & = 4 \cdot 3 \cdot 2 \cdot 1 = 24          \\
+			2! & = 2 \cdot 1 = 2                           \\
+			0! & = 1                                       
+		\end{align*}
+						
+		\question[2\half] Escreva um programa que, utilizando estruturas de repetição, preenche um array de capacidade 5 com números inteiros fornecidos pelo usuário. Em seguida o programa deve imprimir os números do array conforme o formato a seguir, também fazendo uso de estruturas de repetição. Por exemplo, se os números fornecidos forem \texttt{0}, \texttt{7}, \texttt{3}, \texttt{4} e \texttt{9}, nesta ordem, então o programa deve imprimir:
+						
+		\begin{Verbatim}[xleftmargin=\mathindent]
+0␣␣␣9
+␣7␣4␣
+␣␣3␣␣
+␣7␣4␣
+0␣␣␣9
+		\end{Verbatim}
+						
+		O caractere ␣ mostrado acima serve apenas para exibir a presença de um espaço em branco.
+						
+		\newpage
+		\question[2\half] Escreva \emph{precisamente} o que imprime o código abaixo quando executado.
+						
+		\begin{minted}{java}
+			public class WhatDoIDo {
+				public static double f(int x, int y, int[] a) {
+					double w = 0;
+					for (; x <= y; y--) {
+						System.out.println(w + " ");
+						w += a[y];
+					}
+					System.out.println(w);
+					return w / (y - x);
+				}
+				public static void main(String[] args) {
+					int[] b = {1, 2, 3, 4, 5, 6, 7};
+					b[b.length / 2] = b.length;
+					f(1, b.length - 1, b);
+				}
+			}
+		\end{minted}
+						
+	\end{questions}
+			
+\end{document}
