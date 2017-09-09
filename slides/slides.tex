@@ -1,0 +1,109 @@
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+
+\usetheme{Warsaw}
+%\usetheme{Bergen} % utilizar com blocos e itens
+%\usetheme{Berkeley}
+%\usetheme{Berlin} % tópicos marcados no topo
+%\usetheme{Boadilla} % sem navegação
+%\usetheme{CambridgeUS} % barra de navegação pequena no topo
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt} % barra de navegação + tópicos marcados no topo
+%\usetheme{Frankfurt} % tópicos horizontais no topo
+%\usetheme{JuanLesPins} % barras horizontais com subtítulos no topo
+%\usetheme{Luebeck}
+%\usetheme{Madrid} % sem navegação
+%\usetheme{Marburg} % barra de nav. na direita - usar com orchid
+%\usetheme{Malmoe}
+%\usetheme{PaloAlto} % navegação na esquerda
+%\usetheme{Goettingen}
+
+%\usecolortheme{albatross}
+%\usecolortheme{beetle}
+%\usecolortheme{whale}
+%\usecolortheme{beaver} % cinza e vermelho
+\usecolortheme{crane} % amarelo e azul marinho
+%\usecolortheme{dolphin}
+%\usecolortheme{dove} % no blocks
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse} % azul claro e lilás
+
+%\setbeamertemplate{itemize item}[ball]
+%\setbeamertemplate{itemize subitem}[ball]
+%\setbeamertemplate{itemize subsubitem}[ball]
+
+\usefonttheme{professionalfonts}
+
+%\beamertemplateshadingbackground{white}{black!10}
+%\setbeamertemplate[shadow=true]{rounded}
+\setbeamercolor{title}{fg=blue!30!black,bg=white!98!black}
+\setbeamercolor{block title}{fg=red!40!black, bg=white!80!black}
+\setbeamercolor{block body}{fg=black, bg=white!95!black}
+\setbeamercolor{item projected}{bg=red!40!black}
+\setbeamercolor{figure}{fg=red!40!black}
+\setbeamercolor{figure caption}{fg=red!40!black}
+
+%\usepackage[portuguese, brazilian, brazil]{babel}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[ansinew]{inputenc}
+%\usepackage[tight]{subfigure}
+%\usepackage[longnamesfirst,nonamebreak]{natbib}
+\usepackage{units}
+\usepackage{lmodern}
+%\RequirePackage[dvips]{graphicx}
+\usepackage{url}
+\usepackage{listings} % para código fonte
+
+\usepackage{multirow}
+% \usepackage{textcomp}
+
+\bibliographystyle{agsm}
+% \bibliographystyle{acm}
+
+
+
+\title{2\textsuperscript{a} Mostra de Integração Tecnológica}
+\subtitle{FAT / AL}
+\author{Felipe Queiroz}
+\institute{Faculdade de Tecnologia de Alagoas - FAT\\Curso de Análise e Desenvolvimento de Sistemas - ADS}
+%\footnotesize{\texttt{felipe.buarque@gmail.com}
+\date{Agosto de 2017}
+
+\logo{\includegraphics[width=.09\linewidth]{images/fatlogo}}
+
+%\def\newblock{\hskip .11em plus .33em minus .07em}
+\setbeamercovered{dynamic}
+%\setbeamertemplate{footline}[frame number]
+\AtBeginSection[]{\frame[allowframebreaks]{\frametitle{Sumário}\tableofcontents[current]}}
+
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+\begin{document}
+
+\nocite{*}
+%\frame{\titlepage}
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\include{sections/apresentacao}
+\include{sections/temas}
+
+\begin{frame}
+	\frametitle{Contato}
+	\begin{center}
+		felipe.buarque@gmail.com | @felipewally
+	\end{center}
+\end{frame}
+
+% \begin{frame}[allowframebreaks,allowdisplaybreaks]
+% 	\frametitle{References}
+	% \bibliographystyle{ieee}
+% 	\bibliography{references}
+% \end{frame}
+
+\end{document}

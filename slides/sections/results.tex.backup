@@ -1,0 +1,47 @@
+\section{Results}
+
+\subsection{Data}
+\begin{frame}
+	\frametitle{Data}
+	\begin{itemize}
+		\item 37 projects in C
+		\item 12 projects in Java
+		\item XXX files converted
+		\item XXX methods analyzed
+		\item XX files excluded from analysis
+										% 199884
+										% freebsd: 130320
+										% kernel: 208048
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Research Questions}
+	Some research questions:
+	\begin{itemize}
+% 		\item The greater the number of LoC, the greater the number of dependencies?
+		\item How does program size influence feature dependencies?
+% 		\item The greater the number of \#ifdefs, the greater the number of dependencies?
+		\item How does cpp's variability mechanisms influence feature dependencies?
+% 		\item The greater the number of dependencies, the greater the number of bugs introduced in LPS maintenance tasks?
+		\item How feature dependencies influence bugs introduced in LPS maintenance tasks?
+		\item Which the rate of growth in the number of dependencies regarding the number of features?
+		\item ...
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Next Steps}
+	\begin{itemize}
+		\item Add LoC metric to results and try to answer the first question
+		\item Analize resulting data and try to answer the second and forth questions
+		\item Define a sistematic way to perform a search in bug repositories
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Future Work}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}

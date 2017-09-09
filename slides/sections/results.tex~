@@ -1,0 +1,44 @@
+\section{Results}
+
+\begin{frame}
+	\frametitle{Data}
+	\begin{itemize}
+		\item 39 C projects
+		\item 12 Java projects
+		\item 56233 files converted
+		\item 606118 methods analyzed
+		\item 23 (0,04\%) files excluded from analysis
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Data: Cherokee project}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.45]{images/directives1}
+% 		\caption{directives.xls}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.45]{images/directives2}
+		\caption{directives.xls}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Data: Cherokee project}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.45]{images/directives3}
+		\caption{directives.xls}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Data: Cherokee project}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.4]{images/dependencies}
+		\caption{dependencies.xls}
+	\end{figure}
+\end{frame}

@@ -1,0 +1,66 @@
+\section{Finals}
+
+\subsection{Related Work}
+\begin{frame}
+	\frametitle{Related Work}
+	Analysis on preprocessor-based SPLs
+	\begin{itemize}
+		\item Facilities and pitfalls of macro expansion (Ernst et al., TSE 2002)
+		\item Feature code scattering and tangling (Liebig et al., ICSE 2010)
+		\item Program variability quantification (Sincero et al., GPCE 2010)
+		\item Disciplined and undisciplined annotations (Liebig et al., AOSD 2011)
+	\end{itemize}
+\end{frame}
+
+
+\subsection{Research Questions}
+\begin{frame}
+	\frametitle{Research Questions}
+	Some research questions:
+	\begin{itemize}
+% 		\item The greater the number of LoC, the greater the number of dependencies?
+		\item How does program size influence feature dependencies?
+% 		\item The greater the number of \#ifdefs, the greater the number of dependencies?
+		\item How does cpp's variability mechanisms influence feature dependencies?
+% 		\item Which the rate of growth in the number of dependencies regarding the number of features?
+		\item How does number of features influence feature dependencies?
+% 		\item The greater the number of dependencies, the greater the number of bugs introduced in LPS maintenance tasks?
+		\item How does feature dependencies influence bugs introduced in LPS maintenance tasks?
+		\item ...
+	\end{itemize}
+\end{frame}
+
+\subsection{Next Steps}
+\begin{frame}
+	\frametitle{Next Steps}
+	\begin{itemize}
+		\item Add LoC metric to analysis and try to answer the first research question
+		\item Analyze resulting data and try to answer the second and third research questions
+		\item Define a sistematic way to perform a search in bug repositories (and try to answer the forth research question)
+		\item Analyze outliers
+		\item Try to understand behind the numbers
+	\end{itemize}
+\end{frame}
+
+\subsection{Future Work}
+\begin{frame}
+	\frametitle{Future Work}
+	\begin{itemize}
+		\item Add LoFC (Lines of Feature Code) metric to analysis
+% 		\item Answer other questions:
+% 		\begin{itemize}
+% 			\item How does project type/domain influence feature dependencies?
+% % 			\item What kind of bugs are more commonly raised by features dependencies?
+% 			\item There are relation between kind of bugs and features dependencies?
+% 			\item ...
+% 		\end{itemize}
+		\item Integrate with Epona (concurrency tool)
+		\item Think about other dependency types
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		Suggestions?
+	\end{center}
+\end{frame}
