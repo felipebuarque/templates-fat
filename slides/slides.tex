@@ -1,6 +1,6 @@
 \documentclass[hyperref={pdfpagelabels=false}]{beamer}
 
-\usetheme{Warsaw}
+%\usetheme{Warsaw}
 %\usetheme{Bergen} % utilizar com blocos e itens
 %\usetheme{Berkeley}
 %\usetheme{Berlin} % tópicos marcados no topo
@@ -20,8 +20,8 @@
 %\usecolortheme{albatross}
 %\usecolortheme{beetle}
 %\usecolortheme{whale}
-%\usecolortheme{beaver} % cinza e vermelho
-\usecolortheme{crane} % amarelo e azul marinho
+\usecolortheme{beaver} % cinza e vermelho
+%\usecolortheme{crane} % amarelo e azul marinho
 %\usecolortheme{dolphin}
 %\usecolortheme{dove} % no blocks
 %\usecolortheme{orchid}
@@ -35,8 +35,6 @@
 
 \usefonttheme{professionalfonts}
 
-%\beamertemplateshadingbackground{white}{black!10}
-%\setbeamertemplate[shadow=true]{rounded}
 \setbeamercolor{title}{fg=blue!30!black,bg=white!98!black}
 \setbeamercolor{block title}{fg=red!40!black, bg=white!80!black}
 \setbeamercolor{block body}{fg=black, bg=white!95!black}
@@ -44,48 +42,40 @@
 \setbeamercolor{figure}{fg=red!40!black}
 \setbeamercolor{figure caption}{fg=red!40!black}
 
-%\usepackage[portuguese, brazilian, brazil]{babel}
 \usepackage[brazilian]{babel}
 \usepackage[utf8]{inputenc}
-%\usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage[ansinew]{inputenc}
-%\usepackage[tight]{subfigure}
-%\usepackage[longnamesfirst,nonamebreak]{natbib}
-\usepackage{units}
 \usepackage{lmodern}
-%\RequirePackage[dvips]{graphicx}
+\usepackage{graphicx}
+\graphicspath{{../img/}}
 \usepackage{url}
 \usepackage{listings} % para código fonte
-
 \usepackage{multirow}
-% \usepackage{textcomp}
 
 \bibliographystyle{agsm}
 % \bibliographystyle{acm}
 
+\beamertemplatenavigationsymbolsempty
 
+\usebackgroundtemplate%
+{%
+	\includegraphics[width=\paperwidth,height=\paperheight]{slide-background}%
+}
 
 \title{2\textsuperscript{a} Mostra de Integração Tecnológica}
-\subtitle{FAT / AL}
-\author{Felipe Queiroz}
+\subtitle{FAT/AL}
+\author{Felipe Queiroz\\\small\texttt{felipe.buarque@gmail.com}}
 \institute{Faculdade de Tecnologia de Alagoas - FAT\\Curso de Análise e Desenvolvimento de Sistemas - ADS}
-%\footnotesize{\texttt{felipe.buarque@gmail.com}
 \date{Agosto de 2017}
 
-\logo{\includegraphics[width=.09\linewidth]{images/fatlogo}}
-
-%\def\newblock{\hskip .11em plus .33em minus .07em}
 \setbeamercovered{dynamic}
-%\setbeamertemplate{footline}[frame number]
+
 \AtBeginSection[]{\frame[allowframebreaks]{\frametitle{Sumário}\tableofcontents[current]}}
 
 \def\newblock{\hskip .11em plus .33em minus .07em}
 
 \begin{document}
 
-\nocite{*}
-%\frame{\titlepage}
 \begin{frame}
 	\titlepage
 \end{frame}

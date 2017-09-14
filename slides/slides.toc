@@ -1,7 +1,0 @@
-\select@language {brazilian}
-\beamer@sectionintoc {1}{Apresenta\IeC {\c c}\IeC {\~a}o}{2}{0}{1}
-\beamer@sectionintoc {2}{Temas de Pesquisa}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{TCC}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{Mestrado}{7}{0}{2}
-\beamer@subsectionintoc {2}{3}{Atividades Atuais}{18}{0}{2}
-\beamer@subsectionintoc {2}{4}{Outros temas de interesse}{20}{0}{2}
